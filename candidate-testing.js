@@ -12,30 +12,30 @@ let candidateAnswer = ""
 
 
 //TODO: Variables for Part 2
-let questions;
-let correctAnswers;
-let candidateAnswers;
+let questions = ["Who was the first American woman in space?", "True or false: 5 kilometers == 5000 meters?", "(5+3)/2*10=?"];
+let correctAnswers = ["Sally Ride", "true", "40", "Trajectory", 3];
+let candidateAnswers = [];
 
 
 function askForName() {
   // TODO 1.1b: Ask for candidate's name //
-const input = require('readline-sync');
-let candidateName = input.question("Enter candidate's name here: ");
+candidateName = input.question("Enter candidate's name here: ");
 
 }
+
 
 function askQuestion() {
   // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
 console.log(question);
   const input = require('readline-sync');
-let candidateAnswer = input.question("Answer: " );
+candidateAnswer = input.question("Answer: " );
 
 }
 
 function gradeQuiz(candidateAnswers) {
 
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
-if (candidateAnswer = correctAnswer) {
+if (candidateAnswer === correctAnswer) {
   console.log("That's correct!")
 } else {
   console.log("That is incorrect.")
