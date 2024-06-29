@@ -12,8 +12,10 @@ let candidateAnswer = ""
 
 
 //TODO: Variables for Part 2
-let questions = ["Who was the first American woman in space?", "True or false: 5 kilometers == 5000 meters?", "(5+3)/2*10=?"];
-let correctAnswers = ["Sally Ride", "true", "40", "Trajectory", 3];
+let questions = ["Who was the first American woman in space? ", "True or false: 5 kilometers == 5000 meters? ", "(5+3)/2*10=? ", 
+"Given the array [8, 'Orbit', 'Trajectory', 45], what entry is at index 2? ", "What is the minimum crew size for the ISS? "
+];
+let correctAnswers = ["Sally Ride", "true", "40", "Trajectory", "3"];
 let candidateAnswers = [];
 
 
@@ -26,20 +28,24 @@ candidateName = input.question("Enter candidate's name here: ");
 
 function askQuestion() {
   // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
-console.log(question);
-  const input = require('readline-sync');
-candidateAnswer = input.question("Answer: " );
+  for (let i = 0; i < 5; i++) {
+    console.log(questions[i]);
+    let answer = input.question("Answer: " );
+    candidateAnswers.push(answer);
+  }
+  
+
 
 }
 
 function gradeQuiz(candidateAnswers) {
 
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
-if (candidateAnswer === correctAnswer) {
-  console.log("That's correct!")
-} else {
-  console.log("That is incorrect.")
-} 
+  
+  questions.forEach((question, i) => {
+    console.log(`Question 1 cadidate answer: ${candidateAnswers[i]}. \nCorrect answer: ${correctAnswers[i]}`);
+})
+
 
 
   let grade;  //TODO 3.2 use this variable to calculate the candidates score.
